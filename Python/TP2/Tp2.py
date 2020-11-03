@@ -45,15 +45,14 @@ def n_rk4(z, t, y, w, h, n):
     f3 = function(tArray[3],zArray[3][2],zArray[3][1],zArray[3][0])
     f4 = function(tArray[4],zArray[4][2],zArray[4][1],zArray[4][0])
 
-    y5prime = tArray[4] + h/720 * (1901*f4 - 2774*f3 + 2616*f2 - 1274*f1 +251*f0)
+    z5prime = zArray[4][0] + h/720 * (1901*f4 - 2774*f3 + 2616*f2 - 1274*f1 +251*f0)
+    y5prime = zArray[4][1] + h/720 * (1901*f4 - 2774*f3 + 2616*f2 - 1274*f1 +251*f0)
+    w5prime = zArray[4][2] + h/720 * (1901*f4 - 2774*f3 + 2616*f2 - 1274*f1 +251*f0)
 
-    #Devuelvo y5Prime porque no hay ejemplos de ecuacuiones diferenciales de 3orden y para nuestra solucion necesitamos una matriz, cosa que
-    # no se esta devolviendo una en los f de 0 a 4.
+    f5prime = function(t,w5prime,y5prime,z5prime)
+    y5 = tArray[4] + h/720 *(251*f5prime + 646*f4 - 264*f3 + 106 * f2 - 19 * f1)
 
-    #f5prime = function(t,y5prime)
-    #y5 = tArray[4] + h/720 *(251*f5prime + 646*f4 - 264*f3 + 106 * f2 - 19 * f1)
-
-    print(y5prime)
+    print(y5)
 
 
 
