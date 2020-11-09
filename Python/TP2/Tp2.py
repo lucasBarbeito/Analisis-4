@@ -70,7 +70,7 @@ def n_rk4(z,y, w, numberOfIterations, initialValue, finalValue):
 #n_rk4(1,-1,0,10,0,1)
 
 
-def plot(initialValue, finalValue, numberOfIterations):
+def arrayPlot(initialValue, finalValue, numberOfIterations):
     plotList = [numberOfIterations , finalValue , n_rk4(1,-1,0,numberOfIterations,initialValue,finalValue)]
    # print(plotList[1],plotList[2])
     return plotList
@@ -83,8 +83,8 @@ def showplot(numberOfIterations):
         finalValues.append(i)
 
     for i in range(30):
-        plot(0,finalValues[i],numberOfIterations)
-        yValues.append(plot(0,finalValues[i],numberOfIterations)[2])
+        arrayPlot(0,finalValues[i],numberOfIterations)
+        yValues.append(arrayPlot(0,finalValues[i],numberOfIterations)[2])
 
     print("for ",numberOfIterations," number of iterations")
 
