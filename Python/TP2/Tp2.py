@@ -1,6 +1,4 @@
 import math
-
-
 # z''' + b*z'' + c*z' + d*z = F(x)
 
 # Consideraremos a Z''' multiplicada por 1
@@ -50,9 +48,19 @@ def n_rk4(z, t, y, w, h, n):
     w5prime = zArray[4][2] + h/720 * (1901*f4 - 2774*f3 + 2616*f2 - 1274*f1 +251*f0)
 
     f5prime = function(t,w5prime,y5prime,z5prime)
-    y5 = tArray[4] + h/720 *(251*f5prime + 646*f4 - 264*f3 + 106 * f2 - 19 * f1)
+    y5 = zArray[4][0] + h/720 *(251*f5prime + 646*f4 - 264*f3 + 106 * f2 - 19 * f1)
+    z5 = zArray[4][1] + h / 720 * (251 * f5prime + 646 * f4 - 264 * f3 + 106 * f2 - 19 * f1)
+    w5 = zArray[4][2] + h / 720 * (251 * f5prime + 646 * f4 - 264 * f3 + 106 * f2 - 19 * f1)
 
     print(y5)
+    print(z5)
+    print(w5)
+
+    value = function(t,w5,y5,z5)
+    print("value = ",value)
+
+
+
 
 
 
